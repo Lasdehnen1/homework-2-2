@@ -1,6 +1,6 @@
 import java.util.Objects;
 
-public class Hogwarts {
+public abstract class Hogwarts {
     private String name;
     private int witchcraftLevel;
     private int transgressionDistance;
@@ -31,7 +31,7 @@ public class Hogwarts {
 
 
 
-    public void hogwartsComparison(Hogwarts hogwarts1, Hogwarts hogwarts2) {
+    public void studentComparison(Hogwarts hogwarts1, Hogwarts hogwarts2) {
         int sum1 = hogwarts1.getTransgressionDistance() + hogwarts1.getWitchcraftLevel();
         int sum2 = hogwarts2.getTransgressionDistance() + hogwarts2.getWitchcraftLevel();
         if (sum1 > sum2) {

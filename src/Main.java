@@ -32,7 +32,7 @@ public class Main {
         System.out.println();
         gryffindors[0].studentComparison(gryffindors[1], gryffindors[2]);
         System.out.println();
-        gryffindors[0].hogwartsComparison(slytherins[0], puffleduis[1]);
+        gryffindors[0].studentComparison(slytherins[0], puffleduis[1]);
 
 
     }

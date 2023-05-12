@@ -34,20 +34,11 @@ public class Slytherin extends Hogwarts {
         return lustForPowerLevel;
     }
 
-    public void studentComparison(Slytherin slytherin1, Slytherin slytherin2) {
-        int sum1 = slytherin1.getWitchcraftLevel() + slytherin1.getTransgressionDistance() + slytherin1.getAmbitionLevel() + slytherin1.getDeterminationLevel() + slytherin1.getResourcefulnessLevel() + slytherin1.getLustForPowerLevel() + slytherin1.getSlyLevel();
-        int sum2 = slytherin2.getWitchcraftLevel() + slytherin2.getTransgressionDistance() +  slytherin2.getAmbitionLevel() + slytherin2.getDeterminationLevel() + slytherin2.getResourcefulnessLevel() + slytherin2.getLustForPowerLevel() + slytherin2.getSlyLevel();
-
-        if (sum1 > sum2) {
-            System.out.println(slytherin1.getName() + " лучший Гриффиндорец, чем " + slytherin2.getName());
-        }
-        if (sum2 > sum1) {
-            System.out.println(slytherin2.getName() + " лучший Гриффиндорец, чем " + slytherin1.getName());
-        }
-        if (sum2 == sum1) {
-            System.out.println("Силы равны");
-        }
+    @Override
+    public void studentComparison(Hogwarts hogwarts1, Hogwarts hogwarts2) {
+        super.studentComparison(hogwarts1, hogwarts2);
     }
+
     public void printAboutFaculty (Slytherin slytherin) {
         System.out.println(slytherin.getName() + " присущи следующие свойства:\n) " + "Сила магии: "
                 + slytherin.getWitchcraftLevel() + "\n" + "Расстояние трансгрессии: " + slytherin.getTransgressionDistance() + "\n"  + "хитрость: "
