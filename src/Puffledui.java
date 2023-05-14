@@ -23,15 +23,51 @@ public class Puffledui extends Hogwarts {
         return honestyLevel;
     }
 
-    @Override
-    public void studentComparison(Hogwarts hogwarts1, Hogwarts hogwarts2) {
-        super.studentComparison(hogwarts1, hogwarts2);
+
+    /*
+    public void studentComparison(Puffledui puffledui1, Puffledui puffledui2) {
+        int sum1 = puffledui1.getWitchcraftLevel() + puffledui1.getTransgressionDistance() + puffledui1.getHonestyLevel() + puffledui1.getFaithfulnessLevel() + puffledui1.getDiligenceLevel();
+        int sum2 = puffledui2.getWitchcraftLevel() + puffledui2.getTransgressionDistance() + puffledui2.getHonestyLevel() + puffledui2.getFaithfulnessLevel() + puffledui2.getDiligenceLevel();
+
+        if (sum1 > sum2) {
+            System.out.println(puffledui1.getName() + " лучший Пуффледуец, чем " + puffledui2.getName());
+        }
+        if (sum2 > sum1) {
+            System.out.println(puffledui2.getName() + " лучший Пуффледуец чем " + puffledui1.getName());
+        }
+        if (sum2 == sum1) {
+            System.out.println("Силы равны");
+        }
     }
+
+
+
+
 
     public void printAboutFaculty (Puffledui puffledui) {
         System.out.println(puffledui.getName() + " присущи следующие свойства:\n) " + "Сила магии: "
                 + puffledui.getWitchcraftLevel() + "\n" + "Расстояние трансгрессии: " + puffledui.getTransgressionDistance() + "\n"  + "трудолюбие: "
                 + puffledui.getDiligenceLevel()+ "\n" + "верность: " + puffledui.getFaithfulnessLevel() + "\n" +
                 "честность: " + puffledui.getHonestyLevel());
+    }
+
+     */
+
+    @Override
+    public String toString() {
+        return super.toString() + "\n" +
+                "трудолюбие: " + diligenceLevel + "\n" +
+                "верность: " + faithfulnessLevel + "\n" +
+                "честность: " + honestyLevel;
+    }
+
+    @Override
+    public int sumByFaculty() {
+        return this.honestyLevel + this.faithfulnessLevel + this.diligenceLevel;
+    }
+
+    @Override
+    public void printMethod(String student1, String student2) {
+        System.out.println(student1 + " лучший Пуффледуец, чем " + student2);
     }
 }

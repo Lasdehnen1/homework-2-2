@@ -28,11 +28,25 @@ public class Kogtevran extends Hogwarts {
     public int getCreationLevel() {
         return creationLevel;
     }
+    /*
+    public void studentComparison(Kogtevran kogtevran1, Kogtevran kogtevran2) {
+        int sum1 = kogtevran1.getWitchcraftLevel() + kogtevran1.getTransgressionDistance() + kogtevran1.getCreationLevel() + kogtevran1.getClevernessLevel() + kogtevran1.getWitLevel() + kogtevran1.getWisdomLevel();
+        int sum2 = kogtevran2.getWitchcraftLevel() + kogtevran2.getTransgressionDistance() + kogtevran2.getCreationLevel() + kogtevran2.getClevernessLevel() + kogtevran2.getWitLevel() + kogtevran2.getWisdomLevel();
 
-    @Override
-    public void studentComparison(Hogwarts hogwarts1, Hogwarts hogwarts2) {
-        super.studentComparison(hogwarts1, hogwarts2);
+        if (sum1 > sum2) {
+            System.out.println(kogtevran1.getName() + " лучший Гриффиндорец, чем " + kogtevran2.getName());
+        }
+        if (sum2 > sum1) {
+            System.out.println(kogtevran2.getName() + " лучший Гриффиндорец, чем " + kogtevran1.getName());
+        }
+        if (sum2 == sum1) {
+            System.out.println("Силы равны");
+        }
     }
+
+  ]
+
+
 
     public void printAboutFaculty (Kogtevran kogtevran) {
         System.out.println(kogtevran.getName() + " присущи следующие свойства:\n) " + "Сила магии: "
@@ -40,5 +54,26 @@ public class Kogtevran extends Hogwarts {
                 + kogtevran.getClevernessLevel()+ "\n" + "мудрость: " + kogtevran.getWisdomLevel() + "\n" +
                 "остроумие: " + kogtevran.getWitLevel() + "\n" +
                 "творчество: " + kogtevran.getCreationLevel());
+    }
+
+     */
+
+    @Override
+    public String toString() {
+        return super.toString() + "\n" +
+                "ум: " + clevernessLevel + "\n" +
+                "мудрость: " + wisdomLevel + "\n" +
+                "остроумие: " + witLevel + "\n"  +
+                "творчество: " + creationLevel;
+    }
+
+    @Override
+    public int sumByFaculty() {
+        return this.wisdomLevel + this.creationLevel + this.clevernessLevel + this.witLevel;
+    }
+
+    @Override
+    public void printMethod(String student1, String student2) {
+        System.out.println(student1 + " лучший Когтевранец, чем " + student2);
     }
 }

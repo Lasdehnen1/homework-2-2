@@ -1,11 +1,7 @@
-import java.util.Objects;
-
 public abstract class Hogwarts {
     private String name;
     private int witchcraftLevel;
     private int transgressionDistance;
-
-
 
 
     public Hogwarts(String name, int witchcraftLevel, int transgressionDistance) {
@@ -13,7 +9,6 @@ public abstract class Hogwarts {
         this.witchcraftLevel = witchcraftLevel;
         this.transgressionDistance = transgressionDistance;
     }
-
 
 
     public String getName() {
@@ -28,10 +23,8 @@ public abstract class Hogwarts {
         return transgressionDistance;
     }
 
-
-
-
-    public void studentComparison(Hogwarts hogwarts1, Hogwarts hogwarts2) {
+/*
+    public void studentComparisonDiffFaculties(Hogwarts hogwarts1, Hogwarts hogwarts2) {
         int sum1 = hogwarts1.getTransgressionDistance() + hogwarts1.getWitchcraftLevel();
         int sum2 = hogwarts2.getTransgressionDistance() + hogwarts2.getWitchcraftLevel();
         if (sum1 > sum2) {
@@ -44,6 +37,65 @@ public abstract class Hogwarts {
             System.out.println("Силы равны");
         }
     }
+
+ */
+
+    @Override
+    public String toString() {
+        return name + " присущи следующие свойства: \n" +
+                "Сила магии: " + witchcraftLevel +
+                "\n" + "Расстояние трансгрессии: " + transgressionDistance;
+    }
+
+    public int sumByHogwarts() {
+        return witchcraftLevel + transgressionDistance;
+    }
+
+    public abstract int sumByFaculty();
+
+    public abstract void printMethod (String student1, String student2);
+
+    private void compareByFaculty(Hogwarts hogwarts) {
+        int sum1 = this.sumByHogwarts() + this.sumByFaculty();
+        int sum2 = hogwarts.sumByHogwarts() + hogwarts.sumByFaculty();
+        if (sum1 > sum2) {
+            printMethod(this.getName(), hogwarts.getName());
+        }
+        if (sum1 < sum2) {
+            printMethod(hogwarts.getName(), this.getName());
+        } if (sum1 == sum2) {
+            System.out.println("Силы равны");
+        }
+    }
+    private void compareByHogwarts(Hogwarts hogwarts) {
+        int sum1 = this.sumByHogwarts() + this.sumByFaculty();
+        int sum2 = hogwarts.sumByHogwarts() + hogwarts.sumByFaculty();
+        if (sum1 > sum2) {
+            System.out.println(this.getName() + " сильнее, чем " + hogwarts.getName());
+        }
+        if (sum1 < sum2) {
+            System.out.println(hogwarts.getName() + " сильнее, чем " + this.getName());
+        } if (sum1 == sum2) {
+            System.out.println("Силы равны");
+        }
+    }
+
+    public void compare(Hogwarts hogwarts) {
+        if (this.getClass().equals(hogwarts.getClass())) {
+            compareByFaculty(hogwarts);
+        } else {
+            compareByHogwarts(hogwarts);
+        }
+    }
+
+
+
+
+
+
+
+
+
 
 
 }

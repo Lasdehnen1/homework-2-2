@@ -28,13 +28,13 @@ public class Main {
                 new Slytherin("Gregory Goyle", 50, 50, 50, 80, 50, 50, 50)
         };
 
-        gryffindors[0].printAboutFaculty(gryffindors[0]);
+        puffleduis[0].compare(puffleduis[2]);
         System.out.println();
-        gryffindors[0].studentComparison(gryffindors[1], gryffindors[2]);
+        System.out.println(slytherins[0].toString());
         System.out.println();
-        gryffindors[0].studentComparison(slytherins[0], puffleduis[1]);
-
-
+        kogtevrans[2].compare(gryffindors[0]);
+        System.out.println();
+        gryffindors[2].compare(gryffindors[0]);
     }
 
 }
